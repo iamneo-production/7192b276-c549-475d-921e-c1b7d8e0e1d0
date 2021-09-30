@@ -1,0 +1,162 @@
+
+.leftSide , .rightSide{
+    height: 85vh;
+    width: 100%;
+}
+.bank-locker-text{
+    margin-left: 20%;
+    font-weight: 600;
+    font-size: 2rem;
+
+}
+.new_button{
+    margin-left: 30%;
+    width: .1%;
+}
+.rightSide{
+    margin-top: 2%;
+    background-color: rgb(189, 184, 184 , 0.2);
+    border-radius: 0%;
+    border-top-left-radius: 25px;
+
+}
+.navbar{
+    margin-top: 2%;
+}
+
+.horiz-line {
+    width: 100%;
+    margin-top: 1%;
+    margin-bottom: 4%;
+    border: 1px solid rgba(250, 6, 6,0.2);
+    height: .0%;
+}
+.horiz-line-1{
+    width: 100%;
+    margin-top: 2%;
+    margin-bottom: 4%;
+    border: 1px solid rgba(250, 6, 6,0.2);
+    height: .0%;
+}
+
+.upper-search{
+    margin-top : 10%
+}
+.upper-part {
+    
+    height: 20%;
+    width: 100%;
+    /* margin-top: 10%; */
+    margin-left: 20%;
+    
+}
+ 
+.lower-part {
+    
+    height: 50%;
+    width: 100%;
+ 
+}
+ 
+
+.box{
+    margin-left: 160px;
+    margin-top:50px;
+    width: 50%;
+
+}
+.tag{
+    margin-left: 350px;
+}
+
+.input-1 , .input-2 , .input-3{
+    margin-top: 7%;
+}
+
+.bottom-button{
+    margin-left: 90%;
+    margin-top: 10%;
+}
+
+
+
+/* SCROLL BAR */
+.clsScroll
+{
+         height: 450px;
+         width: 100%;
+         /* background: yellow; */
+         overflow-x: hidden;
+         overflow-y: auto;
+}
+
+
+.col-sm{
+   margin-top: 3%;
+   height: 2%;
+   margin-top:5px;
+   font-size: 20px;
+}
+
+.title{
+   
+    font-weight: 400;
+    font-size: 140%;
+}
+
+.fieldTypes{
+    background-color:rgba(241, 159, 132, 0.875);
+    border-radius: 3%;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 2%;
+    height: auto;
+    padding-top: 1px;
+}
+.fieldTypes-1{
+   background-color: rgba(135,206,250,0.6) ;
+   border-radius: 3%;
+   margin-left: 5%;
+   margin-right: 5%;
+   margin-top: 2%;
+   height: auto;
+}
+
+
+.inside-data{
+    padding-bottom: 2%;
+    margin-top: 1%;
+}
+
+
+.grid-1{
+    margin-top: 5%;
+}
+.font{
+    color:#A8A8A8
+}
+.input{
+    width: 400px;
+}
+.h3{
+    border-left: 50px;
+}
+.form-group{
+    display:block;
+    margin: 5px auto;
+    width: 500px;
+}
+input[type="text"]::placeholder { 
+    text-align: center;
+}
+.bcolor{
+    background-color:rgba(135,206,250,0.6);
+    width:90px;
+}
+.margin-set{
+    margin-left: 200px;
+    width:90px;
+}
+.mar{
+    width:100px;
+}
