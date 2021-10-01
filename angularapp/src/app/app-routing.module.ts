@@ -1,7 +1,15 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { LandingComponent } from './landing/landing.component';
+import { CredentialLockerComponent } from './credential-locker/credential-locker.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+
+  {path: '', component: LandingComponent},
+  {path: 'home', component: LandingComponent},
+  {path: 'credentials', component: CredentialLockerComponent},
+
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
