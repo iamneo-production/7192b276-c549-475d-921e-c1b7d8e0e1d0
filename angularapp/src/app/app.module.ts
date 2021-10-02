@@ -1,26 +1,3 @@
-<<<<<<< HEAD
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { LoginPageComponent } from './login-page/login-page.component';
-import { SignupPageComponent } from './signup-page/signup-page.component';
-@NgModule({
-  declarations: [
-    AppComponent,
-    LoginPageComponent,
-    SignupPageComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
-})
-export class AppModule { }
-=======
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -47,4 +24,3 @@ import { LandingComponent } from './landing/landing.component';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
->>>>>>> main
