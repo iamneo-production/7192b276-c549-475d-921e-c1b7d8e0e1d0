@@ -12,6 +12,7 @@ import { SignupPageComponent } from './signup-page/signup-page.component';
 
 
 import { FormsModule } from '@angular/forms';
+import { TryingComponent } from './trying/trying.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { FormsModule } from '@angular/forms';
     CredentialLockerComponent,
     LandingComponent,
     LoginPageComponent,
-    SignupPageComponent
+    SignupPageComponent,
+    TryingComponent
   ],
   
   imports: [
