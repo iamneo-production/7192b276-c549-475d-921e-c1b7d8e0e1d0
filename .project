@@ -20,9 +20,16 @@
 		<nature>org.eclipse.jdt.core.javanature</nature>
 		<nature>org.eclipse.m2e.core.maven2Nature</nature>
 	</natures>
+<<<<<<< HEAD
 	<filteredResources>
 		<filter>
 			<id>1632545180066</id>
+=======
+<<<<<<< HEAD
+	<filteredResources>
+		<filter>
+			<id>1632569502962</id>
+>>>>>>> 7746f4358ff261454143167d42ea7abd37599620
 			<name></name>
 			<type>30</type>
 			<matcher>
@@ -31,4 +38,9 @@
 			</matcher>
 		</filter>
 	</filteredResources>
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> main
+>>>>>>> 7746f4358ff261454143167d42ea7abd37599620
 </projectDescription>

@@ -1,0 +1,28 @@
+
+<div class="row">
+    <div class="col col-sm-3"></div>
+    <div class="col col-sm-5">
+        <br /><br /><br />
+        <form id="loginBox">
+            <h4>Login</h4><br />
+            <div class="row">
+                <input type="email" id="email" placeholder="Enter email">
+            </div> <br />
+            <div class="row">
+                <input type="password" id="password" placeholder="Enter password">
+            </div> <br />
+            <div class="row" id="signup">
+                <p> New User? <a routerLink="/signup" id="signupLink">Sign Up</a></p>
+            </div> <br />
+            <div class="row" id="btn">
+            <button class="btn btn-sm btn-info"  id="loginButton">
+                <a routerLink="/home" >Login</a>
+            </button>
+            </div>
+        </form>
+    </div>
+    <div class="col col-sm-4"></div>
+</div>
+
+
+<router-outlet></router-outlet>

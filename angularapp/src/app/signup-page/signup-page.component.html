@@ -1,0 +1,35 @@
+
+<div class="row">
+    <div class="col col-sm-3"></div>
+    <div class="col col-sm-5">
+        <br /><br /><br />
+        <form  (ngSubmit) = "formSubmit()"  id="signupBox" >
+            <h4>Sign Up</h4><br />
+            <div class="row">
+                <input type="email" id="email" placeholder="Enter email">
+            </div> <br />
+            <div class="row">
+                <input type="text" id="username" placeholder="Enter User name">
+            </div> <br />
+            <div class="row">
+                <input type="tel" id="mobileNumber" placeholder="Enter Mobile Number">
+            </div> <br />
+            <div class="row">
+                <input type="password" id="password" placeholder="Enter Password">
+            </div> <br />
+            <div class="row">
+                <input type="password" id="confirmPassword" placeholder="Confirm Password">
+            </div> <br />
+            <div class="row" id="signup">
+                <p> Already a User? <a routerLink ="/login" id="signinLink">Login</a></p>
+            </div>
+            <div class="row" id="btn">
+            <button class="btn btn-sm btn-info" routerLink= "/home" id="submitButton">Submit</button>
+            </div>
+        </form>
+    </div>
+    <div class="col col-sm-4"></div>
+</div>
+
+
+<router-outlet></router-outlet>

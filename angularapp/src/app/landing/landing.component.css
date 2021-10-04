@@ -1,0 +1,15 @@
+.content{
+  transition: all .5s;
+}
+
+.content:hover{
+  background: #c774eb;
+}
+
+.landing-links{
+  text-decoration: none;
+  color: black;
+
+}
+
+
