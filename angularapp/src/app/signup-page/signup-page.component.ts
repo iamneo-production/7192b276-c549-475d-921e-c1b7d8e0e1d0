@@ -9,19 +9,7 @@ export class SignupPageComponent implements OnInit {
 
   constructor() { }
 
-
-  public user = {
-    email : '',
-    username : '',
-    mobileNumber : '',
-    password : '',
-    confirmPasword : '',
-  }
   ngOnInit(): void {
   }
 
-  formSubmit()
-  {
-    alert("yes");
-  }
 }
