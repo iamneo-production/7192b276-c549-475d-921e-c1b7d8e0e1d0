@@ -12,6 +12,7 @@ import { SignupPageComponent } from './signup-page/signup-page.component';
 
 
 import { FormsModule } from '@angular/forms';
+import { ValComponent } from './val/val.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { FormsModule } from '@angular/forms';
     CredentialLockerComponent,
     LandingComponent,
     LoginPageComponent,
-    SignupPageComponent
+    SignupPageComponent,
+    ValComponent
   ],
   
   imports: [
