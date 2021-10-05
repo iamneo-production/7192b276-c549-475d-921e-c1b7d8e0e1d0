@@ -10,13 +10,11 @@ import { LoginPageComponent } from './login-page/login-page.component';
 import { SignupPageComponent } from './signup-page/signup-page.component';
 
 
+import {   FormsModule , ReactiveFormsModule } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
-import { FormsModule } from '@angular/forms';
-<<<<<<< HEAD
-import { ValComponent } from './val/val.component';
-=======
-import { TryingComponent } from './trying/trying.component';
->>>>>>> main
+
+
 
 @NgModule({
   declarations: [
@@ -26,17 +24,14 @@ import { TryingComponent } from './trying/trying.component';
     LandingComponent,
     LoginPageComponent,
     SignupPageComponent,
-<<<<<<< HEAD
-    ValComponent
-=======
-    TryingComponent
->>>>>>> main
+  
   ],
   
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
 
   providers: [],
