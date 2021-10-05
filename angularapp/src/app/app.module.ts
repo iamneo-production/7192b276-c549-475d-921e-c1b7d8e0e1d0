@@ -12,7 +12,11 @@ import { SignupPageComponent } from './signup-page/signup-page.component';
 
 
 import { FormsModule } from '@angular/forms';
+<<<<<<< HEAD
 import { ValComponent } from './val/val.component';
+=======
+import { TryingComponent } from './trying/trying.component';
+>>>>>>> main
 
 @NgModule({
   declarations: [
@@ -22,7 +26,11 @@ import { ValComponent } from './val/val.component';
     LandingComponent,
     LoginPageComponent,
     SignupPageComponent,
+<<<<<<< HEAD
     ValComponent
+=======
+    TryingComponent
+>>>>>>> main
   ],
   
   imports: [
