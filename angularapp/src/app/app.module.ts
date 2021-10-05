@@ -3,19 +3,37 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { BankLockerComponent } from './bank-locker/bank-locker.component';
-import { HeaderComponent } from './header/header.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { CredentialLockerComponent } from './credential-locker/credential-locker.component';
+import { LandingComponent } from './landing/landing.component';
+import { LoginPageComponent } from './login-page/login-page.component';
+import { SignupPageComponent } from './signup-page/signup-page.component';
+
+
+import {   FormsModule , ReactiveFormsModule } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+
+
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    BankLockerComponent,
-    HeaderComponent
+    NavbarComponent,
+    CredentialLockerComponent,
+    LandingComponent,
+    LoginPageComponent,
+    SignupPageComponent,
+  
   ],
+  
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
+
   providers: [],
   bootstrap: [AppComponent]
 })

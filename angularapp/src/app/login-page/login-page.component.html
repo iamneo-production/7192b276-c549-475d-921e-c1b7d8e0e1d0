@@ -1,0 +1,41 @@
+<div class="row">
+    <div class="col col-sm-3"></div>
+    <div class="col col-sm-5">
+        <br /><br /><br />
+        <form [formGroup]="myForms">
+
+
+            <label>Email :
+                <input type="text" formControlName="email">
+            </label>
+            <div class="errors"
+                *ngIf="myForms.get('email').touched || myForms.get('email').dirty">
+
+                <div *ngIf="myForms.get('email').hasError('required')" style="color:red">
+                    email is required
+                </div>
+            </div>
+            <br>
+            <label>Password :
+                <input type="text" formControlName="password">
+            </label><br>
+
+            <div style="color:red" class="errors"
+                *ngIf="myForms.get('password').invalid && (myForms.get('password').touched || myForms.get('password').dirty)">
+
+                <div *ngIf="myForms.get('password').hasError('required')" style="color:red">
+                    password is required
+                </div>
+            </div>
+
+            <div class="row" id="signup">
+                <p> new user ? <a style="color:blue" routerLink="/signup" id="loginLink">Signup</a></p>
+            </div>
+            <button [disabled]="!myForms.valid">Submit</button>
+        </form>
+    </div>
+    <div class="col col-sm-4"></div>
+</div>
+
+
+<router-outlet></router-outlet>
