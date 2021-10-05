@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
+import {FormsModule , ReactiveFormsModule ,FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { PasswordStrengthValidator } from './password-strength.validators';
+
 @Component({
   selector: 'app-login-page',
   templateUrl: './login-page.component.html',
@@ -7,9 +10,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginPageComponent implements OnInit {
 
-  constructor() { }
+  public myForms : FormGroup;
 
-  ngOnInit(): void {
+  constructor(fb: FormBuilder) {
+
+    this.myForms = fb.group({
+      email : ['', Validators.required],
+      password: ['',
+        Validators.required]
+    });
   }
-
+  ngOnInit(): void {
+    throw new Error('Method not implemented.');
+  }
 }

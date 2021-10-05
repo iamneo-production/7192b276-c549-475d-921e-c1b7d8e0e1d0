@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { PasswordStrengthValidator } from './password-strength.validators';
 
 @Component({
   selector: 'app-signup-page',
@@ -7,9 +9,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SignupPageComponent implements OnInit {
 
-  constructor() { }
 
-  ngOnInit(): void {
+
+  public myForms: FormGroup;
+
+  constructor(fb: FormBuilder) {
+
+    this.myForms = fb.group({
+      email : ['', Validators.required],
+      userName : ['', Validators.required],
+      mobile : ['', Validators.required],
+      password: [null, Validators.compose([
+        Validators.required, Validators.minLength(8), PasswordStrengthValidator])]
+    });
   }
 
+
+  get email()
+  {
+    return this.myForms.get('email')
+  }
+  ngOnInit(): void {
+    throw new Error('Method not implemented.');
+  }
 }
