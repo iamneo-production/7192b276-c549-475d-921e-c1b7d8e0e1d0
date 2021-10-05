@@ -2,28 +2,70 @@
     <div class="col col-sm-3"></div>
     <div class="col col-sm-5">
         <br /><br /><br />
-        <form  (ngSubmit) = "formSubmit()"  id="signupBox" >
+        <form [formGroup]="myForms" (ngSubmit)="myForms" id="signupBox">
             <h4>Sign Up</h4><br />
             <div class="row">
-                <input type="email" id="email" placeholder="Enter email">
-            </div> <br />
+                <input type="email" id="email" formControlName="email" placeholder="Enter email">
+            </div>
+            <div class="errors"
+                *ngIf="myForms.get('email').invalid && (myForms.get('email').touched || myForms.get('email').dirty)">
+
+                <div style="color: red;" *ngIf="myForms.get('email').hasError('required')">
+                    Email is required
+                </div>
+            </div>
+            <br />
             <div class="row">
-                <input type="text" id="username" placeholder="Enter User name">
-            </div> <br />
+                <input type="text" id="username" formControlName="userName" placeholder="Enter User name">
+            </div>
+            <div class="errors"
+                *ngIf="myForms.get('mobile').invalid && (myForms.get('mobile').touched || myForms.get('mobile').dirty)">
+
+                <div style="color: red;" *ngIf="myForms.get('mobile').hasError('required')">
+                    User name is required
+                </div>
+            </div>
+            <br />
             <div class="row">
-                <input type="tel" id="mobileNumber" placeholder="Enter Mobile Number">
-            </div> <br />
+                <input type="tel" id="mobileNumber" formControlName="mobile" placeholder="Enter Mobile Number">
+            </div>
+
+            <div class="errors"
+                *ngIf="myForms.get('mobile').invalid && (myForms.get('mobile').touched || myForms.get('mobile').dirty)">
+
+                <div style="color: red;" *ngIf="myForms.get('mobile').hasError('required')">
+                    mobile number is required
+                </div>
+            </div>
+            <br />
             <div class="row">
-                <input type="password" id="password" placeholder="Enter Password">
-            </div> <br />
+                <input type="password" id="password" formControlName="password" placeholder="Enter Password">
+            </div>
+            <div class="errors"
+                *ngIf="myForms.get('password').invalid && (myForms.get('password').touched || myForms.get('password').dirty)">
+
+                <div style="color: red;" *ngIf="myForms.get('password').hasError('required')">
+                    password is required
+                </div>
+
+                <div style="color: red;" *ngIf="myForms.get('password').errors.minlength">
+                    Password must be at least 8 characters
+                </div>
+
+                <div style="color: red;" class="error-text" *ngIf="myForms.get('password').hasError('passwordStrength')">
+                    {{myForms.get('password').errors['passwordStrength']}}
+                </div>
+            </div>
+            <br />
             <div class="row">
                 <input type="password" id="confirmPassword" placeholder="Confirm Password">
             </div> <br />
             <div class="row" id="signup">
-                <p> Already a User? <a routerLink ="/login" id="signinLink">Login</a></p>
+                <p> Already a User? <a routerLink="/login" id="signinLink">Login</a></p>
             </div>
             <div class="row" id="btn">
-            <button class="btn btn-sm btn-info" routerLink= "/home" id="submitButton">Submit</button>
+                <button class="btn btn-sm btn-info" [disabled]="!myForms.valid" routerLink="/home"
+                    id="submitButton">Submit</button>
             </div>
         </form>
     </div>

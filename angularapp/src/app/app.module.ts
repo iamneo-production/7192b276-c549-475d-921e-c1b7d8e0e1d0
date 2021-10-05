@@ -10,8 +10,11 @@ import { LoginPageComponent } from './login-page/login-page.component';
 import { SignupPageComponent } from './signup-page/signup-page.component';
 
 
+import {   FormsModule , ReactiveFormsModule } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
-import { FormsModule } from '@angular/forms';
+
+
 
 @NgModule({
   declarations: [
@@ -20,13 +23,15 @@ import { FormsModule } from '@angular/forms';
     CredentialLockerComponent,
     LandingComponent,
     LoginPageComponent,
-    SignupPageComponent
+    SignupPageComponent,
+  
   ],
   
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
 
   providers: [],
