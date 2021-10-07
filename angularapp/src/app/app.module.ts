@@ -9,9 +9,9 @@ import { LandingComponent } from './landing/landing.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { SignupPageComponent } from './signup-page/signup-page.component';
 
-
 import {   FormsModule , ReactiveFormsModule } from '@angular/forms';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MediaLockerComponent } from './media-locker/media-locker.component';
 
 
 
@@ -24,6 +24,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
     LandingComponent,
     LoginPageComponent,
     SignupPageComponent,
+    MediaLockerComponent,
   
   ],
   
