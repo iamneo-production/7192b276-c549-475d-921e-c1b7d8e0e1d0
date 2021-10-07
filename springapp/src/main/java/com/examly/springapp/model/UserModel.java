@@ -1,10 +1,12 @@
 // package main.java.com.examly.springapp.model;
 
-package model;
+package com.examly.springapp.model;
 
 import javax.persistence.Entity;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Id;
+import java.util.List;
 
 @Entity
 @Table(name = "Checking")
@@ -19,6 +21,7 @@ public class UserModel {
     private String mobileNumber;
     private boolean active = true;
     private String role;
+
 
     public UserModel() {
 
