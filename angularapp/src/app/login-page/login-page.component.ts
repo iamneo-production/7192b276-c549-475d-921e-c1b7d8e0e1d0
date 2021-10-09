@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-import {FormsModule , ReactiveFormsModule ,FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { PasswordStrengthValidator } from './password-strength.validators';
+import {FormBuilder, FormGroup, Validators } from '@angular/forms';
+
 
 @Component({
   selector: 'app-login-page',
@@ -21,6 +21,6 @@ export class LoginPageComponent implements OnInit {
     });
   }
   ngOnInit(): void {
-    throw new Error('Method not implemented.');
+   
   }
 }
