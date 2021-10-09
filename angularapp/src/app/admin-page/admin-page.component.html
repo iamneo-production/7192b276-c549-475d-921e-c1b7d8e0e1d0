@@ -13,10 +13,10 @@
         <div class="leftSide">
             
               <div class="flex-container-top">
-                <div>Credentials<br><br>1200</div>
-                <div>Bank Info<br><br>1200</div>
-                <div>Media<br><br>1200</div>  
-                <div>Users<br><br>1200</div>
+                <div class="flex-box" (click)="details()">Credentials<br><br>1200</div>
+                <div class="flex-box" (click)="details()">Bank Info<br><br>1200</div>
+                <div class="flex-box" (click)="details()">Media<br><br>1200</div>  
+                <div class="flex-box" (click)="details()">Users<br><br>1200</div>
               </div>
 
             
@@ -25,11 +25,11 @@
 
 
             <!-- ------------------GRID PART---------------------------------------- -->
-
-
+              <h4 style="text-align: center;">USERS</h4>
+            
             <div class="clsScroll">
                 <div class="fieldTypes">
-                    <div class="fieldsContainer">
+                    <div class="fieldsContainer" >
                         <div class="container inside-data">
                             <div class="row">
                                 <div class="col-sm title">
@@ -67,16 +67,135 @@
 
 
                     </div>
+                    <div class="fieldsContainer">
+                        <div class="container inside-data">
+                            <div class="row">
+                                <div class="col-sm title">
+                                    User 2
+                                </div>
+                                <div class="col-sm">
+                                    <div class="row">last visit</div>
+                                    <div class="row">1/1/2020</div>
+                                </div>
+
+                                <div class="col-sm">
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-sm-4 ">
+                                                <button class="btn  " type="submit">
+                                                  <i class="fa fa-pencil-square-o fa-lg" aria-hidden="true"></i>
+                                                </button>
+                                            </div>
+
+
+                                            <div class="col-sm-4 order-last">
+                                                <button class="btn  " type="submit">
+                                                  <i class="fa fa-trash fa-lg" aria-hidden="true"></i>
+                                                </button>
+                                            </div>
+                                         </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                           
+
+
+                        </div>
+
+
+                    </div>
+
+                    <div class="fieldsContainer">
+                        <div class="container inside-data">
+                            <div class="row">
+                                <div class="col-sm title">
+                                    User 3
+                                </div>
+                                <div class="col-sm">
+                                    <div class="row">last visit</div>
+                                    <div class="row">1/1/2020</div>
+                                </div>
+
+                                <div class="col-sm">
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-sm-4 ">
+                                                <button class="btn  " type="submit">
+                                                  <i class="fa fa-pencil-square-o fa-lg" aria-hidden="true"></i>
+                                                </button>
+                                            </div>
+
+
+                                            <div class="col-sm-4 order-last">
+                                                <button class="btn  " type="submit">
+                                                  <i class="fa fa-trash fa-lg" aria-hidden="true"></i>
+                                                </button>
+                                            </div>
+                                         </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                           
+
+
+                        </div>
+
+
+                    </div>
+                    <div class="fieldsContainer" >
+                        <div class="container inside-data">
+                            <div class="row">
+                                <div class="col-sm title">
+                                    User 4
+                                </div>
+                                <div class="col-sm">
+                                    <div class="row">last visit</div>
+                                    <div class="row">1/1/2020</div>
+                                </div>
+
+                                <div class="col-sm">
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-sm-4 ">
+                                                <button class="btn  " type="submit">
+                                                  <i class="fa fa-pencil-square-o fa-lg" aria-hidden="true"></i>
+                                                </button>
+                                            </div>
+
+
+                                            <div class="col-sm-4 order-last">
+                                                <button class="btn  " type="submit">
+                                                  <i class="fa fa-trash fa-lg" aria-hidden="true"></i>
+                                                </button>
+                                            </div>
+                                         </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                           
+
+
+                        </div>
+
+
+                    </div>
+
+                    
                 </div>
 
                 
 
 
             </div>
+            
 
 
         </div>
     </div>
+    
 
 
 
@@ -88,11 +207,11 @@
                 <div class="row upper-search">
                     <div class="col justify-content-center">
                         <div class="input">
-                            <input type="text" class="form-control" placeholder="Enter Your password to continue">
+                            <input type="text" class="form-control" placeholder="Enter Your password to continue" #txt>
                         </div>
                     </div>
                     <div class="col">
-                        <button class="btn btn-primary " type="submit">Check</button>
+                        <button class="btn btn-primary " type="submit" >Check</button>
                     </div>
                 </div>
             </div>
