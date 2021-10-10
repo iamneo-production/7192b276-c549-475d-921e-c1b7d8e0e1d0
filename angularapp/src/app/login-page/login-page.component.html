@@ -3,11 +3,8 @@
     <div class="col col-sm-5">
         <br /><br /><br />
         <form [formGroup]="myForms">
-
-
-            <label>Email :
-                <input type="text" formControlName="email">
-            </label>
+            <h3>Login</h3>
+            <input type="email" formControlName="email" placeholder="Enter email">
             <div class="errors"
                 *ngIf="myForms.get('email').touched || myForms.get('email').dirty">
 
@@ -16,9 +13,7 @@
                 </div>
             </div>
             <br>
-            <label>Password :
-                <input type="text" formControlName="password">
-            </label><br>
+            <input type="password" formControlName="password" placeholder="Enter password">
 
             <div style="color:red" class="errors"
                 *ngIf="myForms.get('password').invalid && (myForms.get('password').touched || myForms.get('password').dirty)">
@@ -31,7 +26,11 @@
             <div class="row" id="signup">
                 <p> new user ? <a style="color:blue" routerLink="/signup" id="loginLink">Signup</a></p>
             </div>
+<<<<<<< HEAD
+            <button [disabled]="!myForms.valid" class="btn btn-info">Login</button>
+=======
             <button [disabled]="!myForms.valid" routerLink="/home" >Submit</button>
+>>>>>>> origin/main
         </form>
     </div>
     <div class="col col-sm-4"></div>
