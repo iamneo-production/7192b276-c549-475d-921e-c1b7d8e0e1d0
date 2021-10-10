@@ -24,15 +24,20 @@ import { MediaLockerComponent } from './media-locker/media-locker.component';
     LandingComponent,
     LoginPageComponent,
     SignupPageComponent,
+<<<<<<< HEAD
+    
+=======
     MediaLockerComponent,
   
+>>>>>>> login-usha
   ],
   
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule 
   ],
 
   providers: [],
