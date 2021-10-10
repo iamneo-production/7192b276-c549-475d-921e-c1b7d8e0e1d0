@@ -8,16 +8,9 @@ import { CredentialLockerComponent } from './credential-locker/credential-locker
 import { LandingComponent } from './landing/landing.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { SignupPageComponent } from './signup-page/signup-page.component';
-<<<<<<< HEAD
-
-import {   FormsModule , ReactiveFormsModule } from '@angular/forms';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 import { MediaLockerComponent } from './media-locker/media-locker.component';
-=======
-import { HttpClientModule } from '@angular/common/http'
-
 import {   FormsModule , ReactiveFormsModule } from '@angular/forms';
->>>>>>> origin/main
 
 
 
@@ -30,16 +23,7 @@ import {   FormsModule , ReactiveFormsModule } from '@angular/forms';
     LandingComponent,
     LoginPageComponent,
     SignupPageComponent,
-<<<<<<< HEAD
-<<<<<<< HEAD
-    
-=======
-    MediaLockerComponent,
-  
->>>>>>> login-usha
-=======
-    
->>>>>>> origin/main
+    MediaLockerComponent
   ],
   
   imports: [
