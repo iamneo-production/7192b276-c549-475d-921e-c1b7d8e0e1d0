@@ -15,9 +15,11 @@
   flex: 50%;
   border-radius: 10px;
 }
+
 .flex-container:hover > div{
     background-color: coral;
 }
+
 .flex-container-top {
   display: flex;
   flex-wrap: nowrap;
@@ -26,8 +28,8 @@
   margin-bottom: 0%;
   align-items: center;
   justify-content: center;
-
 }
+
 .flex-container-top > div {
   width: 140px;
   height: 100px;
@@ -38,28 +40,26 @@
   font-size: 20px;
   border-radius: 25px;
 }
+
 .flex-box{
   background-color: rgb(164, 196, 236);
 }
+
 .flex-box:hover{
   background-color: rgb(238, 148, 163);
   cursor: pointer;
 }
 
-
-
-
 leftSide , .rightSide{
-
   height: 80vh;
   width: 100%;
 }
-
 
 .Credential-locker-text{
   font-weight: 600;
   font-size: 2rem;
 }
+
 .new_button{
   margin-left: 40%;
   width: .1%;
@@ -70,6 +70,7 @@ leftSide , .rightSide{
   border-radius: 10%;
 
 }
+
 .navbar{
   margin-top: 10%;
 }
@@ -86,22 +87,17 @@ leftSide , .rightSide{
 .upper-search{
   margin-top : 10%
 }
+
 .upper-part {
-  
   height: 20%;
   width: 100%;
-  /* margin-top: 10%; */
   margin-left: 20%;
-  
 }
 
 .lower-part {
-  
   height: 50%;
   width: 100%;
-
 }
-
 
 .box{
   margin : auto;
@@ -117,18 +113,13 @@ leftSide , .rightSide{
   margin-top: 10%;
 }
 
-
-
 /* SCROLL BAR */
-.clsScroll
-{
-       height: 370px;
-       width: 100%;
-       /* background: yellow; */
-       overflow-x: hidden;
-       overflow-y: auto;
+.clsScroll {
+  height: 370px;
+  width: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
-
 
 .col-sm{
   margin-top: 3%;
@@ -159,8 +150,6 @@ leftSide , .rightSide{
   cursor: pointer;
 }
 
-
-
 .inside-data{
   padding-bottom: 2%;
   margin-top: 5%;
@@ -170,5 +159,3 @@ leftSide , .rightSide{
 .grid-1{
   margin-top: 5%;
 }
-
-
