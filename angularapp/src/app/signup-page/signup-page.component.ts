@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UserServiceService } from '../services/user-service.service';
+import { User } from '../user';
 import { PasswordStrengthValidator } from './password-strength.validators';
 
 @Component({
@@ -13,8 +15,8 @@ export class SignupPageComponent implements OnInit {
 
   public myForms: FormGroup;
 
-  constructor(fb: FormBuilder) {
-
+  constructor( fb: FormBuilder , private userService : UserServiceService) {
+    
     this.myForms = fb.group({
       email : ['', Validators.required],
       userName : ['', Validators.required],
@@ -29,7 +31,49 @@ export class SignupPageComponent implements OnInit {
   {
     return this.myForms.get('email')
   }
-  ngOnInit(): void {
-    throw new Error('Method not implemented.');
+  ngOnInit(): void {}
+
+  public formData = {
+    email: '',
+    password :'',
+    mobileNumber:'',
+    username: '',
+
+  };
+
+  formSubmit(){
+    this.userService.addUser(this.formData).subscribe(
+      (data) =>{
+        console.log(data);
+        alert("success");
+      },
+      (error)=>
+      {
+        console.log(error);
+        alert("error");
+      }
+      
+      )
   }
+
+  
+  // user = new User();
+  // formSubmit()
+  // {
+  //   this.userService.loginUserfromRemote(this.user).subscribe
+  //   (
+      
+  //     (data) =>{
+  //       console.log(data);
+  //       alert("success");
+  //     },
+  //     (error)=>
+  //     {
+  //       console.log(error);
+  //       alert("error");
+  //     }
+      
+  //   )
+  // }
+   
 }
