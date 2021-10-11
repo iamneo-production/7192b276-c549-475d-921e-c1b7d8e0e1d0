@@ -1,10 +1,11 @@
 
 
-package model;
+package com.examly.springapp.model;
 
 import java.util.*;
 
 import javax.persistence.Entity;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Id;
 import javax.persistence.*;
@@ -13,7 +14,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "Users")
+@Table(name = "users")
 public class UserModel {
 
 
@@ -32,6 +33,9 @@ public class UserModel {
     @Column(name ="user_role")
     private String role = "NORMAL";
 
+
+    @OneToMany(mappedBy = "users", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private List<BankVaultModel> bankVaults;
 
 
 
