@@ -14,7 +14,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "Users")
+@Table(name = "users")
 public class UserModel {
 
 
@@ -34,6 +34,8 @@ public class UserModel {
     private String role = "NORMAL";
 
 
+    @OneToMany(mappedBy = "users", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private List<BankVaultModel> bankVaults;
 
 
 

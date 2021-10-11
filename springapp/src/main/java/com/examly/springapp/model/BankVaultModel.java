@@ -8,11 +8,11 @@ import javax.persistence.*;
 public class BankVaultModel {
 
     @Id
-    @Column(name="vault_id")
+    @Column(name = "vault_id")
     private String vaultId;
-    @Column(name="account_number")
+    @Column(name = "account_number")
     private long accountNumber;
-    @Column(name="account_name")
+    @Column(name = "account_name")
     private String accountName;
 
     @Column(name = "username")
@@ -24,21 +24,23 @@ public class BankVaultModel {
     @Column(name = "ifsc")
     private String ifsc;
 
-    @ManyToOne
-    private UserModel userModel;
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "user_id")
+    private UserModel user;
 
 
     public BankVaultModel() {
     }
 
-    public BankVaultModel(String vaultId, long accountNumber, String accountName, String username, String password, String ifsc, UserModel userModel) {
+
+    public BankVaultModel(String vaultId, long accountNumber, String accountName, String username, String password, String ifsc, UserModel user) {
         this.vaultId = vaultId;
         this.accountNumber = accountNumber;
         this.accountName = accountName;
         this.username = username;
         this.password = password;
         this.ifsc = ifsc;
-        this.userModel = userModel;
+        this.user = user;
     }
 
     public String getPassword() {
@@ -55,6 +57,14 @@ public class BankVaultModel {
 
     public void setVaultId(String vaultId) {
         this.vaultId = vaultId;
+    }
+
+    public UserModel getUser() {
+        return user;
+    }
+
+    public void setUser(UserModel user) {
+        this.user = user;
     }
 
     public long getAccountNumber() {
@@ -87,13 +97,5 @@ public class BankVaultModel {
 
     public void setIfsc(String ifsc) {
         this.ifsc = ifsc;
-    }
-
-    public UserModel getUserModel() {
-        return userModel;
-    }
-
-    public void setUserModel(UserModel userModel) {
-        this.userModel = userModel;
     }
 }

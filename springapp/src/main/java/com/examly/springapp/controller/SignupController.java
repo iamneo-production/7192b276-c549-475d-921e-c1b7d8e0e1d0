@@ -1,12 +1,11 @@
-package controller;
+package com.examly.springapp.controller;
 
 
 
-import model.*;
-import service.*;
-import repo.*;
+import com.examly.springapp.model.UserModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import com.examly.springapp.service.UserService;
 
 @RestController
 // @CrossOrigin("*")
@@ -19,7 +18,7 @@ public class SignupController {
     
     @PostMapping ( "/signup")
     @CrossOrigin(origins = "https://8081-ddebdbcdadaeefefcfbefdaaebbaacaca.examlyiopb.examly.io/signup")
-    public UserModel saveUser( @RequestBody  UserModel user) throws Exception
+    public UserModel saveUser(@RequestBody  UserModel user) throws Exception
     {
         String  tempEmailId = user.getEmail();
 
