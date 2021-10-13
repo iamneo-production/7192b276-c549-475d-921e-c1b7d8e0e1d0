@@ -9,16 +9,20 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-// @CrossOrigin("*")
+ @CrossOrigin("https://8080-ddebdbcdadaeefefcfbefdaaebbaacaca.examlyiopb.examly.io/")
 public class SignupController {
 
 
     @Autowired
     private UserService service;
 
+
+    @GetMapping("/")
+	public String Home() {
+		return "Rest Server Started ";
+	}
     
     @PostMapping ( "/signup")
-    @CrossOrigin(origins = "https://8081-ddebdbcdadaeefefcfbefdaaebbaacaca.examlyiopb.examly.io/signup")
     public UserModel saveUser( @RequestBody  UserModel user) throws Exception
     {
         String  tempEmailId = user.getEmail();
@@ -38,7 +42,6 @@ public class SignupController {
     
 
     @PostMapping ( "/login")
-    @CrossOrigin(origins = "https://8081-ddebdbcdadaeefefcfbefdaaebbaacaca.examlyiopb.examly.io/login")
     public UserModel loginUser(@RequestBody UserModel user) throws Exception
     {
         String tempEmailId = user.getEmail();

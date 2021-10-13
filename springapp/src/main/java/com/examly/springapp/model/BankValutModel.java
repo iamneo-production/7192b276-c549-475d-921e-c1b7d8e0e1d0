@@ -4,7 +4,7 @@ package model;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "Bank_Details")
+@Table(name = "bank_details")
 public class BankValutModel {
 
     @Id
@@ -21,8 +21,8 @@ public class BankValutModel {
 
 
 
-    @ManyToOne(cascade = CascadeType.ALL ,fetch = FetchType.LAZY)
-    private  UserModel user;
+    // @ManyToOne(cascade = CascadeType.ALL ,fetch = FetchType.LAZY)
+    // private  UserModel user;
 
      
     public BankValutModel() {
