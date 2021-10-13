@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import com.examly.springapp.service.UserService;
 
 @RestController
- @CrossOrigin("https://8080-ddebdbcdadaeefefcfbefdaaebbaacaca.examlyiopb.examly.io/")
+ @CrossOrigin("https://8080-ddebdbcdadaeefefcfbefdaaebbaacaca.examlyiopb.examly.io")
 public class SignupController {
 
 
