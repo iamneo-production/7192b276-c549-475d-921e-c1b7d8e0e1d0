@@ -8,9 +8,13 @@ import { CredentialLockerComponent } from './credential-locker/credential-locker
 import { LandingComponent } from './landing/landing.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { SignupPageComponent } from './signup-page/signup-page.component';
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http'
 
 import {   FormsModule , ReactiveFormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
+import { AuthGuard } from './_auth/auth.guard';
+import { AuthInterceptor } from './_auth/auth.interceptor';
+import { UserService } from './services/user.service';
 
 
 
@@ -31,10 +35,19 @@ import {   FormsModule , ReactiveFormsModule } from '@angular/forms';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule 
+    HttpClientModule ,
+    RouterModule
   ],
 
-  providers: [],
+  providers: [
+    AuthGuard ,  
+    {
+      provide:HTTP_INTERCEPTORS,
+      useClass:AuthInterceptor,
+      multi:true
+    },
+    UserService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
