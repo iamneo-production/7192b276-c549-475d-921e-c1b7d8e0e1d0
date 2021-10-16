@@ -2,11 +2,17 @@
     <div class="col col-sm-3"></div>
     <div class="col col-sm-5">
         <br /><br /><br />
-        <form [formGroup]="myForms">
-            <h3>Login</h3>
-            <input type="email" formControlName="email" placeholder="Enter email">
-            <div class="errors"
-                *ngIf="myForms.get('email').touched || myForms.get('email').dirty">
+        <form #loginForm="ngForm" (ngSubmit)= "login(loginForm)" [formGroup]="myForms" >
+
+
+            <label>Email :
+                <input type="text" formControlName="email"
+                ngModel
+                name="email"
+                id="email"
+                >
+            </label>
+            <div class="errors" *ngIf="myForms.get('email').touched || myForms.get('email').dirty">
 
                 <div *ngIf="myForms.get('email').hasError('required')" style="color:red">
                     email is required
@@ -14,6 +20,13 @@
             </div>
             <br>
             <input type="password" formControlName="password" placeholder="Enter password">
+            <label>Password :
+                <input type="text" formControlName="password" 
+                ngModel
+                name="password"
+                id="password"
+                >
+            </label><br>
 
             <div style="color:red" class="errors"
                 *ngIf="myForms.get('password').invalid && (myForms.get('password').touched || myForms.get('password').dirty)">
@@ -26,7 +39,7 @@
             <div class="row" id="signup">
                 <p> new user ? <a style="color:blue" routerLink="/signup" id="loginLink">Signup</a></p>
             </div>
-            <button [disabled]="!myForms.valid" routerLink="/home" >Submit</button>
+            <button [disabled]="!myForms.valid" value="Login" type="submit" >Submit</button>
         </form>
     </div>
     <div class="col col-sm-4"></div>

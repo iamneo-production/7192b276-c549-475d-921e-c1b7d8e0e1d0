@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@CrossOrigin
+@CrossOrigin(origins = "https://8081-ddebdbcdadaeefefcfbefdaaebbaacaca.examlyiopb.examly.io")
 public class JwtController {
 
     @Autowired
