@@ -1,2 +1,2 @@
-let baseUrl = 'https://8081-ddebdbcdadaeefefcfbefdaaebbaacaca.examlyiopb.examly.io'
+let baseUrl = "http://localhost:1002";
 export default baseUrl;
