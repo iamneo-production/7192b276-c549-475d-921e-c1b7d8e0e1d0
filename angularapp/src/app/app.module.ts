@@ -12,6 +12,13 @@ import { SignupPageComponent } from './signup-page/signup-page.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MediaLockerComponent } from './media-locker/media-locker.component';
 import { FormsModule , ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http'
+
+import {   FormsModule , ReactiveFormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
+import { AuthGuard } from './_auth/auth.guard';
+import { AuthInterceptor } from './_auth/auth.interceptor';
+import { UserService } from './services/user.service';
 
 
 
@@ -33,10 +40,19 @@ import { FormsModule , ReactiveFormsModule } from '@angular/forms';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule 
+    HttpClientModule ,
+    RouterModule
   ],
 
-  providers: [],
+  providers: [
+    AuthGuard ,  
+    {
+      provide:HTTP_INTERCEPTORS,
+      useClass:AuthInterceptor,
+      multi:true
+    },
+    UserService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
