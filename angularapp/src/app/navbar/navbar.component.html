@@ -2,8 +2,8 @@
   <h1 class="navbar-brand " >Wise - Defender</h1>
   <form class="form-inline justify-content-around" >
    
-    <a routerLink="/home" class="home-button">Home</a>
-    <a routerLink="/login" class="logout-button">Logout</a>
+    <a *ngIf = "! isLoggedIn()" routerLink="/home" class="home-button">Home</a>
+    <a *ngIf = "! isLoggedIn()" class="logout-button" (click)="logout()" >Logout</a>
   </form>
 </nav>
 <router-outlet></router-outlet>

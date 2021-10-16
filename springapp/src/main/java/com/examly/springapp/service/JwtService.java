@@ -32,20 +32,20 @@ public class JwtService implements UserDetailsService {
     private AuthenticationManager authenticationManager;
 
     public JwtResponse createJwtToken(JwtRequest jwtRequest) throws Exception {
-        String userName = jwtRequest.getUserName();
-        String userPassword = jwtRequest.getUserPassword();
-        authenticate(userName, userPassword);
+        String email = jwtRequest.getEmail();
+        String password = jwtRequest.getPassword();
+        authenticate(email, password);
 
-        UserDetails userDetails = loadUserByUsername(userName);
+        UserDetails userDetails = loadUserByUsername(email);
         String newGeneratedToken = jwtUtil.generateToken(userDetails);
 
-        UserModel userModel = userDao.findById(userName).get();
+        UserModel userModel = userDao.findById(email).get();
         return new JwtResponse(userModel, newGeneratedToken);
     }
 
     @Override
-    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        UserModel userModel = userDao.findById(username).get();
+    public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
+        UserModel userModel = userDao.findById(email).get();
 
         if (userModel != null) {
             return new org.springframework.security.core.userdetails.User(
@@ -54,7 +54,7 @@ public class JwtService implements UserDetailsService {
                     getAuthority(userModel)
             );
         } else {
-            throw new UsernameNotFoundException("User not found with username: " + username);
+            throw new UsernameNotFoundException("User not found with email: " + email);
         }
     }
 
@@ -64,9 +64,9 @@ public class JwtService implements UserDetailsService {
         return authorities;
     }
 
-    private void authenticate(String userName, String userPassword) throws Exception {
+    private void authenticate(String email, String password) throws Exception {
         try {
-            authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(userName, userPassword));
+            authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(email, password));
         } catch (DisabledException e) {
             throw new Exception("USER_DISABLED", e);
         } catch (BadCredentialsException e) {
