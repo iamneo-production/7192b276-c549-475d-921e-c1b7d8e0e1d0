@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { UserServiceService } from '../services/user-service.service';
-import { User } from '../user';
+import { UserService } from '../services/user.service';
+
+
 import { PasswordStrengthValidator } from './password-strength.validators';
 
 @Component({
@@ -15,7 +16,7 @@ export class SignupPageComponent implements OnInit {
 
   public myForms: FormGroup;
 
-  constructor( fb: FormBuilder , private userService : UserServiceService) {
+  constructor( fb: FormBuilder ,private userService : UserService) {
     
     this.myForms = fb.group({
       email : ['', Validators.required],
