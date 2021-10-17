@@ -1,6 +1,8 @@
 package com.examly.springapp.model;
 
 
+import com.examly.springapp.entity.UserModel;
+
 import javax.persistence.*;
 
 @Entity

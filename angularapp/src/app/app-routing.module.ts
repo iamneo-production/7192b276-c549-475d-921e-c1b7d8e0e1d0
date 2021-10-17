@@ -20,10 +20,8 @@ const routes: Routes = [
   {path: 'signup', component: SignupPageComponent},
   {path: 'bank', component: BankLockerComponent},
   {path: 'media', component: MediaLockerComponent},
-  {path: 'admin', component: AdminPageComponent}
-  {path: 'credentials', component: CredentialLockerComponent },
-  {path: 'signup', component: SignupPageComponent},
-  {path: 'login', component: LoginPageComponent}
+  {path: 'admin', component: AdminPageComponent},
+  {path: 'credentials', component: CredentialLockerComponent }
 
 
 ];

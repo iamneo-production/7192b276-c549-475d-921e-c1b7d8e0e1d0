@@ -1,3 +1,4 @@
+import { FormGroup, FormBuilder } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,36 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BankLockerComponent implements OnInit {
 
-  constructor() { }
+  mode: string;
+  public bankForm: FormGroup;
+  public bank = {
+    accountNumber: '',
+    accountName: '',
+    username: '',
+    password: '',
+    ifsc: ''
+
+  }
+  constructor(bf: FormBuilder) {
+    this.bankForm = bf.group({
+
+    })
+  }
 
   ngOnInit(): void {
+  }
+
+  bankSubmit(){
+    console.log(this.bank)
+    alert("")
+  }
+
+  modeNew(){
+    this.mode = "NEW"
+  }
+
+  modeUpdate(){
+    this.mode = "UPDATE"
   }
 
 }

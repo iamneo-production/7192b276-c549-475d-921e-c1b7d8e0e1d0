@@ -1,3 +1,6 @@
+import { AuthGuard } from './_auth/auth.guard';
+import { UserService } from './services/user.service';
+import { BankVaultService } from './services/bank-vault.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -9,16 +12,10 @@ import { CredentialLockerComponent } from './credential-locker/credential-locker
 import { LandingComponent } from './landing/landing.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { SignupPageComponent } from './signup-page/signup-page.component';
-import { HttpClientModule } from '@angular/common/http';
-import { MediaLockerComponent } from './media-locker/media-locker.component';
-import { FormsModule , ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http'
-
-import {   FormsModule , ReactiveFormsModule } from '@angular/forms';
+import { MediaLockerComponent } from './media-locker/media-locker.component';
 import { RouterModule } from '@angular/router';
-import { AuthGuard } from './_auth/auth.guard';
-import { AuthInterceptor } from './_auth/auth.interceptor';
-import { UserService } from './services/user.service';
+import {   FormsModule , ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -34,24 +31,26 @@ import { UserService } from './services/user.service';
     MediaLockerComponent,
     AdminPageComponent
   ],
-  
+
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule ,
-    RouterModule
+    RouterModule,
+    HttpClientModule,
   ],
 
   providers: [
-    AuthGuard ,  
+    AuthGuard ,
     {
       provide:HTTP_INTERCEPTORS,
-      useClass:AuthInterceptor,
+      useClass:AuthenticatorResponse,
       multi:true
     },
-    UserService
+    UserService,
+    BankVaultService
   ],
   bootstrap: [AppComponent]
 })

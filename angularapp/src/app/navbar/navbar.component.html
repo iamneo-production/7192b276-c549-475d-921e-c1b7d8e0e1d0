@@ -1,9 +1,8 @@
 <nav class="navbar nav justify-content-between">
   <h1 class="navbar-brand " >Wise - Defender</h1>
   <form class="form-inline justify-content-around" >
-   
+
     <a *ngIf = "! isLoggedIn()" routerLink="/home" class="home-button">Home</a>
     <a *ngIf = "! isLoggedIn()" class="logout-button" (click)="logout()" >Logout</a>
   </form>
 </nav>
-<router-outlet></router-outlet>
