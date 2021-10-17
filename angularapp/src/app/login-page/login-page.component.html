@@ -1,24 +1,45 @@
-<div class="row" id="header">
-    <h3>Wise-Defender</h3>
-</div>
 <div class="row">
     <div class="col col-sm-3"></div>
     <div class="col col-sm-5">
         <br /><br /><br />
-        <form id="loginBox">
-            <h4>Login</h4><br />
-            <div class="row">
-                <input type="email" id="email" placeholder="Enter email">
-            </div> <br />
-            <div class="row">
-                <input type="password" id="password" placeholder="Enter password">
-            </div> <br />
-            <div class="row" id="signup">
-                <p> New User? <a href="signup-page/signup-page.component.html" id="signupLink">Sign Up</a></p>
-            </div> <br />
-            <div class="row" id="btn">
-            <button class="btn btn-sm btn-info" id="loginButton">Login</button>
+        <form #loginForm="ngForm" (ngSubmit)= "login(loginForm)" [formGroup]="myForms" >
+
+
+            <label>Email :
+                <input type="text" formControlName="email"
+                ngModel
+                name="email"
+                id="email"
+                >
+            </label>
+            <div class="errors" *ngIf="myForms.get('email').touched || myForms.get('email').dirty">
+
+                <div *ngIf="myForms.get('email').hasError('required')" style="color:red">
+                    email is required
+                </div>
             </div>
+            <br>
+            <input type="password" formControlName="password" placeholder="Enter password">
+            <label>Password :
+                <input type="text" formControlName="password" 
+                ngModel
+                name="password"
+                id="password"
+                >
+            </label><br>
+
+            <div style="color:red" class="errors"
+                *ngIf="myForms.get('password').invalid && (myForms.get('password').touched || myForms.get('password').dirty)">
+
+                <div *ngIf="myForms.get('password').hasError('required')" style="color:red">
+                    password is required
+                </div>
+            </div>
+
+            <div class="row" id="signup">
+                <p> new user ? <a style="color:blue" routerLink="/signup" id="loginLink">Signup</a></p>
+            </div>
+            <button [disabled]="!myForms.valid" value="Login" type="submit" >Submit</button>
         </form>
     </div>
     <div class="col col-sm-4"></div>
