@@ -1,0 +1,41 @@
+.nav-s{
+    position: sticky;
+    top: 0;
+}
+.nav{
+    background-color: #c774eb;
+    border-radius: 2%;
+}
+
+.navbar-brand{
+   
+    color: black;
+    font-size:200%;
+    padding-left: 1rem;
+  
+}
+.home-button
+{
+   
+    border-radius: 2%;
+    padding: auto;
+    text-decoration: none;
+    color: black;
+    box-sizing: border-box;
+    padding-right: 1rem;
+    font-size:1.5rem;
+}
+.logout-button
+{
+
+    padding: auto;
+    margin: auto;
+    text-decoration: none;
+    color: black;
+    box-sizing: border-box;
+    padding-right: 1rem;
+    font-size:1.5rem;
+}
+nav {
+    overflow: hidden; /* Hide scrollbars */
+  }
