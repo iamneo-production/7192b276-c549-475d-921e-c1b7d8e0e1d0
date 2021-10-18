@@ -1,7 +1,7 @@
 package com.examly.springapp.service;
 
-import com.examly.springapp.model.BankVaultModel;
-import com.examly.springapp.repo.BankVaultRepo;
+import com.examly.springapp.entity.BankVaultModel;
+import com.examly.springapp.dao.BankVaultRepo;
 import javassist.NotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

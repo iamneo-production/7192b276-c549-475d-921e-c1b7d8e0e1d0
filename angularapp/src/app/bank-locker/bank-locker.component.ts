@@ -1,3 +1,4 @@
+import { BankVaultService } from './../services/bank-vault.service';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 
@@ -18,7 +19,7 @@ export class BankLockerComponent implements OnInit {
     ifsc: ''
 
   }
-  constructor(bf: FormBuilder) {
+  constructor(bf: FormBuilder, private bankService: BankVaultService) {
     this.bankForm = bf.group({
 
     })
@@ -30,14 +31,46 @@ export class BankLockerComponent implements OnInit {
   bankSubmit(){
     console.log(this.bank)
     alert("")
+
+    switch (this.mode) {
+      case "NEW":
+        this.bankService.addBank(this.bank).subscribe(
+          (data)=> {
+            console.log(data)
+            alert("success")
+          },
+          (error) => {
+            console.log(error)
+            alert("something went wrong")
+          }
+        )
+        break;
+      case "UPDATE":
+        this.bankService.updateBank(this.bank).subscribe(
+          (data)=> {
+            console.log(data)
+            alert("success")
+          },
+          (error) => {
+            console.log(error)
+            alert("something went wrong")
+          }
+        )
+        break;
+      default:
+        break;
+    }
+
   }
 
   modeNew(){
     this.mode = "NEW"
+    document.getElementById("bankLockerForm").submit()
   }
 
   modeUpdate(){
     this.mode = "UPDATE"
+    document.getElementById("bankLockerForm").submit()
   }
 
 }

@@ -1,6 +1,6 @@
-package com.examly.springapp.repo;
+package com.examly.springapp.dao;
 
-import com.examly.springapp.model.BankVaultModel;
+import com.examly.springapp.entity.BankVaultModel;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

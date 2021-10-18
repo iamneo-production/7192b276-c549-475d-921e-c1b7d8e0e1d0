@@ -1,6 +1,6 @@
 package com.examly.springapp.controller;
 
-import com.examly.springapp.model.BankVaultModel;
+import com.examly.springapp.entity.BankVaultModel;
 import com.examly.springapp.service.BankVaultService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -18,8 +18,8 @@ public class BankVaultController {
         return bankService.getBankInfo();
     }
 
-    @PostMapping("/{id}")
-    public String bankInfoSave(@PathVariable long id, @RequestBody BankVaultModel bank){
+    @PostMapping
+    public String bankInfoSave(@RequestBody BankVaultModel bank){
         return bankService.bankInfoSave(bank);
     }
 

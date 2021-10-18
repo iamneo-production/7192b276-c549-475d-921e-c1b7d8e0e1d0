@@ -5,7 +5,7 @@
                 <nav class="navbar navbar-light justify-content-center">
                     <h3 class="navbar-brand bank-locker-text">Bank Info locker</h3>
 
-                    <form class="form-inline new_button">
+                    <form class="form-inline new_button" (submit)= "modeNew()">
                         <button id="newButton" class="mar bcolor btn btn-light " type="submit">New</button>
                     </form>
 
@@ -132,7 +132,7 @@
 
                 <hr class="horiz-line">
                 <div class="row lower-part">
-                  <form (ngSubmit)="bankSubmit()">
+                  <form (ngSubmit)="bankSubmit()" id="bankLockerForm">
 
                      <div class="row">
                         <div class="box">
