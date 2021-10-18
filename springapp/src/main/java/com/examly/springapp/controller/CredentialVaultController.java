@@ -8,27 +8,27 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/credentials")
+//@RequestMapping("/credentials")
 public class CredentialVaultController {
     @Autowired
     CredentialVaultService credentialService;
 
-    @GetMapping("/info")
+    @GetMapping("/credentials")
     public List<CredentialVaultModel> getCredentialInfo(){
         return credentialService.getCredentialInfo();
     }
 
-    @PostMapping("/new/{id}")
+    @PostMapping("/credentials/{id}")
     public String credentialInfoSave(@PathVariable String id, @RequestBody CredentialVaultModel credential){
         return credentialService.credentialInfoSave(credential);
     }
 
-    @DeleteMapping("/delete/{id}")
+    @DeleteMapping("/credentials/{id}")
     public String credentialInfoDelete(@PathVariable String id){
         return  credentialService.credentialInfoDelete(id);
     }
 
-    @PutMapping("/update/{id}")
+    @PutMapping("/credentials/{id}")
     public String credentialInfoEditSave(@PathVariable String id, @RequestBody CredentialVaultModel credential){
         return credentialService.credentialInfoEditSave(id, credential);
     }
