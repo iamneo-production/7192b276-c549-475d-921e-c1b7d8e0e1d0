@@ -1,0 +1,51 @@
+package com.examly.springapp.entity;
+
+import org.springframework.security.core.userdetails.User;
+
+import javax.persistence.*;
+
+@Entity
+public class MediaValutModel {
+
+    @Id
+//    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    private String valutId;
+    private String mediaName;
+//    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+//    @JoinColumn(name = "user_id")
+//    private UserModel user = getUser();
+
+    public MediaValutModel(String valutId, String mediaName, UserModel user) {
+        this.valutId = valutId;
+        this.mediaName = mediaName;
+//        this.user = user;
+    }
+
+    public MediaValutModel() {
+
+    }
+
+    public String getValutId() {
+        return valutId;
+    }
+
+    public void setValutId(String valutId) {
+        this.valutId = valutId;
+    }
+
+    public String getMediaName() {
+        return mediaName;
+    }
+
+    public void setMediaName(String mediaName) {
+        this.mediaName = mediaName;
+    }
+
+//    public UserModel getUser() {
+//        return user;
+//    }
+//
+//    public void setUser(UserModel user) {
+//        this.user = user;
+//    }
+}

@@ -10,8 +10,9 @@
 }
 
 h3 {
-    color: white;
+    color: rgb(60, 10, 243);
     font-family: serif;
+    text-align: center;
 }
 
 form {
@@ -22,7 +23,12 @@ form {
     padding:  20px 50px 20px 50px;
     margin-top: 0px;
     border: 1px dotted #6a0496;
-    ;
+    justify-content: center;
+}
+
+input {
+    margin-top: 20px;
+    width: 400px;
 }
 
 h4 {
@@ -33,13 +39,11 @@ h4 {
 
 button {
     font-family: serif;
+    background-color: rgb(0, 153, 255);
     color: white;
     width: 50%;
     font-size: 15px;
-}
-
-#btn {
-    justify-content: center;
+    border: none;
 }
 
 p {
