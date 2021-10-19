@@ -14,7 +14,8 @@
   }
 }
 =======
-/* To learn more about this file see: https://angular.io/config/tsconfig. */
+
+
 {
   "extends": "../tsconfig.json",
   "compilerOptions": {
@@ -28,4 +29,4 @@
     ]
   }
 }
->>>>>>> main
+>>>>>>> 37b999c1ddf9c0f1a5705d71a80bfe9081713c32
