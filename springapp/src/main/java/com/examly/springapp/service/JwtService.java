@@ -32,45 +32,45 @@ public class JwtService implements UserDetailsService {
     private AuthenticationManager authenticationManager;
 
     public JwtResponse createJwtToken(JwtRequest jwtRequest) throws Exception {
-        String email = jwtRequest.getEmail();
-        String password = jwtRequest.getPassword();
-        authenticate(email, password);
+        String userName = jwtRequest.getUserName();
+        String userPassword = jwtRequest.getUserPassword();
+        authenticate(userName, userPassword);
 
-        UserDetails userDetails = loadUserByUsername(email);
+        UserDetails userDetails = loadUserByUsername(userName);
         String newGeneratedToken = jwtUtil.generateToken(userDetails);
 
-        UserModel userModel = userDao.findById(email).get();
-        return new JwtResponse(userModel, newGeneratedToken);
+        UserModel user = userDao.findByEmail(userName);
+        return new JwtResponse(user, newGeneratedToken);
     }
 
     @Override
-    public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
-        UserModel userModel = userDao.findById(email).get();
+    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+        UserModel user = userDao.findByEmail(username);
 
-        if (userModel != null) {
+        if (user != null) {
             return new org.springframework.security.core.userdetails.User(
-                    userModel.getEmail(),
-                    userModel.getPassword(),
-                    getAuthority(userModel)
+                    user.getEmail(),
+                    user.getPassword(),
+                    getAuthority(user)
             );
         } else {
-            throw new UsernameNotFoundException("User not found with email: " + email);
+            throw new UsernameNotFoundException("User not found with username: " + username);
         }
     }
 
-    private Set getAuthority(UserModel userModel) {
+    private Set getAuthority(UserModel user) {
+
         Set<SimpleGrantedAuthority> authorities = new HashSet<>();
-            authorities.add(new SimpleGrantedAuthority("ROLE_" +userModel.getRole() ));
-        return authorities;
+        authorities.add(new SimpleGrantedAuthority("ROLE_" +user.getRole() ));
+    return authorities;
     }
 
-    private void authenticate(String email, String password) throws Exception {
+    private void authenticate(String userName, String userPassword) throws Exception {
         try {
-            authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(email, password));
+            authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(userName, userPassword));
         } catch (DisabledException e) {
             throw new Exception("USER_DISABLED", e);
         } catch (BadCredentialsException e) {
             throw new Exception("INVALID_CREDENTIALS", e);
         }
-    }
-}
+    }}

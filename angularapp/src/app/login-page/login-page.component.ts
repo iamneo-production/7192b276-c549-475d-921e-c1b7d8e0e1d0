@@ -28,21 +28,26 @@ export class LoginPageComponent implements OnInit {
   }
 
 
+  username = 'javainuse'
+  password = ''
+  invalidLogin = false
+ 
 
   login(loginForm: NgForm) {
     this.userService.login(loginForm.value).subscribe(
       (response: any) => {
-
         this.userAuthService.setRoles(response.user.role);
         this.userAuthService.setToken(response.jwtToken);
-
+        console.log(response);
         const role = response.user.role;
-        
         if(role =="User")
         {
           this.router.navigate(['/home']);
+        }else if(role =="Admin")
+        {
+          this.router.navigate(['/admin']);
         }
-
+        console.log(response);
       },
       (error) => {
         console.log(error);

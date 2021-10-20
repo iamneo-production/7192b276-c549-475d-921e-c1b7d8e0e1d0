@@ -6,6 +6,8 @@ import { Injectable } from '@angular/core';
 export class UserAuthService {
 
   constructor() { }
+
+  
 //----------------------------- TO STORE USER ROLE ---------------------------------------------------------
  
   public setRoles(roles: []) {
